@@ -31,10 +31,10 @@ function App() {
     try {
       const res = await axios.post('http://localhost:5000/api/chat', {
         message,
-        language, // отправляем язык, если нужно
+        language, 
       });
       setReply(res.data.reply);
-      setMessage(''); // Очистить поле после отправки
+      setMessage(''); 
     } catch (err) {
       setReply(t.error);
     }
@@ -100,7 +100,7 @@ function App() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') handleSend(); // Реакция на Enter
+              if (e.key === 'Enter') handleSend(); 
             }}
             placeholder={t.placeholder}
             className="flex-1 p-3 rounded-full bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"

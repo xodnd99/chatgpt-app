@@ -16,7 +16,7 @@ app.post('/api/chat', async (req, res) => {
     const response = await axios.post(
       'https://openrouter.ai/api/v1/chat/completions',
       {
-        model: 'openai/gpt-3.5-turbo', // или 'meta-llama/llama-3-8b-instruct' если хочешь LLaMA
+        model: 'openai/gpt-3.5-turbo', 
         messages: [
           { role: 'system', content: `Respond in ${language}. You are a helpful assistant.` },
           { role: 'user', content: message },
@@ -26,8 +26,8 @@ app.post('/api/chat', async (req, res) => {
         headers: {
           Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
           'Content-Type': 'application/json',
-          'HTTP-Referer': 'https://yourapp.com', // можно заменить на свою ссылку
-          'X-Title': 'My Chat App' // произвольное название
+          'HTTP-Referer': 'https://yourapp.com', 
+          'X-Title': 'My Chat App' 
         },
       }
     );
